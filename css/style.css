@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+.grid-wrap{
+    padding: 2rem;
+    background: #333333;
+    width: calc(600px + 2rem + 2rem);
+    text-align: center;
+}
+h1{
+    color: white;
+    margin: 0;
+}
+button{
+    border: none;
+    outline: none;
+}
+.grid-container{
+    width: 600px;
+    padding: 1rem;
+    grid-gap: 15px;
+    display: grid;
+    grid-auto-rows: 120px 120px 120px;
+    grid-template-columns: 23% 23% 23% 20%;
+    justify-content: center;
+}
+.grid-item {
+    box-shadow: 0 4px #989898, 4px 8px 2px #d98d21;
+    background: #c1c1c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    cursor: pointer;
+    color: black;
+    transition: transform .5s;
+}
+.grid-item.game.won{
+    transform: scale(1.1);
+    color: green;
+    background: #c3cec38a;
+}
+
+.grid-item.game:hover{
+    transform: scale(1.1);
+}
+
+.grid-item.game.won:hover{
+    /*transform: scale(1.1);*/
+    pointer-events: none;
+}
+
+.grid-item:nth-child(10){
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+}
+.player{
+    width: 100%;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #d3d3d3;
+}
+.player.turn{
+    background: #d98d21;
+}
+.count-turns{
+    display: contents;
+}
+.count-turns > span {
+    font-size: 10px;
+    /*padding: 0;*/
+}
+.count{
+    font-size: 16px;
+    font-weight: bold;
+}
+.restart{
+    background: #333333;
+    color: white;
+    width: 100%;
+    padding: 7px;
+    font-size: 10px;
+    border-radius: 5px;
+}
+.players-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+.message{
+    opacity: 0;
+    transition: opacity .5s;
+    color: white;
+    font-size: 20px;
+}
+.message.visible{
+    opacity: 1;
+}
+.console{
+    transition: background-color 1s;
+}
+.console.won {
+    background: green;
+}
+.console.draw {
+    background: #d98d21;
+}
